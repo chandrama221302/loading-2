@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* Default hide all views */
+        #destveiw, #tabveiw, #mobileveiw {
+            display: none;
+        }
+
+
+
+        .text-section {
+            padding: 0px;
+        }
+        .sub-title {
+            color: teal;
+            font-weight: bold;
+        }
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .title span {
+            color: teal;
+        }
+        .description {
+            color: gray;
+        }
+        .features {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .features li span {
+            color: teal;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+        .info {
+            color: gray;
+            font-weight: bold;
+        }
+        .phone {
+            color: teal;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .image-section {
+            text-align: center;
+        }
+        .image-section img {
+            width: 500px;
+            height: 500px;
+            border-radius: 0px;
+        }
+        /* .shado{
+            position: absolute;
+             margin-left: 125px;  
+            margin-top: 20px;
+            width: 500px;
+            height: 500px;
+            background-color: #6d0f0f;
+            border-radius: 0px;
+            z-index: -1; 
+        } */
+        .image{
+            transition: transform 0.4s ease-in-out;
+        }
+        .call-button{
+            display: inline-block;
+            padding: 10px 20px;
+           
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Mobile View */
+        @media (min-width:320px) and (max-width:480px){
+            #mobileveiw{
+                display: block;
+                margin-top: 250px;
+               
+                height: 120vh;
+            }
+            .mobile {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+            
+            .sub-title {
+                color: teal;
+                font-weight: bold;
+            }
+            
+            .title {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+            
+            .description {
+                color: gray;
+            }
+            
+            .features {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .features li {
+                margin: 6px 0;
+                text-align: left;
+                font-weight: bold;
+            }
+            
+            .features li span {
+                color: teal;
+                font-size: 1rem;
+                margin-right: 8px;
+            }
+            
+            .info {
+                color: gray;
+                font-weight: bold;
+            }
+            
+            .phone {
+                color: teal;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            .title span {
+                color: teal;
+            }
+
+            .text-section {
+                flex: 1;
+                padding: 15px;
+            }
+
+            .image-section {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+             .image {
+                
+                width: 100%;
+                overflow: hidden;
+                height: auto;
+                z-index: -1;
+                
+            }
+            /* .shado{
+                position: absolute;
+             background-color: #102cc991;
+             margin-left: 20px;
+             margin-top: 20px;
+             z-index: 1;
+             opacity: 0.7;
+            } */
+        }
+        
+
+        /* Tablet View */
+        @media (min-width: 481px) and (max-width: 768px) {
+           #tabveiw{
+            display: block;
+           }
+
+            .tab {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 30px;
+}
+
+.sub-title {
+    color: teal;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.title span {
+    color: teal;
+}
+
+.description, .info {
+    color: gray;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    margin: 8px 0;
+    text-align: left;
+    font-weight: bold;
+}
+
+.features li span {
+    color: teal;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.phone {
+    color: teal;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.text-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.image-section {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+/* .shado {
+    position: absolute;
+    background-color: #c9a110;
+    margin-left: 20px;
+    margin-top: 20px;
+    z-index: -1;
+    opacity: 0.7;
+} */
+
+
+
+    /* Responsive Media Queries mobile screens  */
+
+
+
+
+/* Responsive Media Queries tab veiw in 3 screens  */
+@media (min-width: 481px) and (max-width: 550px) {
+    #tabveiw{
+            display: block;
+           }
+    .image { width: 400px; height: 450px; }
+    /* .shado { width: 400px; height: 430px; } */
+}
+
+@media (min-width: 550px) and (max-width: 650px) {
+    #tabveiw{
+            display: block;
+           }
+    .image { width: 530px; height: 480px; }
+    /* .shado { width: 530px; height: 460px; } */
+}
+
+@media (min-width: 650px) and (max-width: 768px) {
+    #tabveiw{
+            display: block;
+           }
+    .image { width: 600px; height: 500px; }
+    /* .shado { width: 600px; height: 480px; } */
+}
+
+        }
+
+        /* Desktop View */
+        @media (min-width: 769px) {
+            #destveiw{
+        display: block;
+    }
+            .text-section {
+            padding: 0px;
+        }
+        .sub-title {
+            color: teal;
+            font-weight: bold;
+        }
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .title span {
+            color: teal;
+        }
+        .description {
+            color: gray;
+        }
+        .features {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .features li span {
+            color: teal;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+        .info {
+            color: gray;
+            font-weight: bold;
+        }
+        .phone {
+            color: teal;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .image-section {
+            text-align: center;
+        }
+        .image-section img {
+            width: 500px;
+            height: 500px;
+            border-radius: 0px;
+        }
+        /* .shado{
+            position: absolute;
+             margin-left: 125px;  
+            margin-top: 20px;
+            width: 500px;
+            height: 500px;
+            background-color: #6d0f0f;
+            border-radius: 0px;
+            z-index: -1; 
+        } */
+        .image{
+            transition: transform 0.4s ease-in-out;
+        }
+        
+        }
+    </style>
+</head>
+<body>
+
+    <!-- auto destop veiw -->
+    <div class="container-fluid  p-5 " id="destveiw">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-section">
+                <h5 class="sub-title">THE BEST TRAVEL AGENCY</h5>
+                <h2 class="title">DISCOVER THE <span>WORLD</span> WITH OUR GUIDE</h2>
+                <p class="description">You can choose any country with good tourism. Agency elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat.</p>
+                <p class="description">Hotel ut nisl quam vestibulum ac quam nec odio elementum ceisue the miss varius natoque penatibus et magnis dis parturient monte.</p>
+                <ul class="features">
+                    <li><span>&#10004;</span> 20 Years of Experience</li>
+                    <li><span>&#10004;</span> 150+ Tour Destinations</li>
+                </ul>
+                <p class="info">For information</p>
+                <a href="tel:+919876543210" class="call-button phone"> 9876543210 </a>
+            </div>
+            <div class="col-lg-6 image-section ">
+                <!-- <div class="shado"></div> -->
+                <img src="nice-pic.jpeg" alt="Travel" class="img-fluid image pt-5">
+            </div>
+        </div>
+    </div>
+
+    <!-- ______________________________________________________________________________________________ -->
+
+     <!-- tab veiw  -->
+
+     <div class="container-fluid " id="tabveiw">
+        <div class="row align-items-center">
+            <div class="tab ">
+                <div class="col-lg-6 text-section">
+                    <h5 class="sub-title">THE BEST TRAVEL AGENCY</h5>
+                    <h2 class="title">DISCOVER THE <span>WORLD</span> WITH OUR GUIDE</h2>
+                    <p class="description">You can choose any country with good tourism. Agency elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat.</p>
+                    <p class="description">Hotel ut nisl quam vestibulum ac quam nec odio elementum ceisue the miss varius natoque penatibus et magnis dis parturient monte.</p>
+                    <ul class="features">
+                        <li><span><i class="fa-solid fa-circle-check"></i></span> 20 Years of Experience</li>
+                        <li><span><i class="fa-solid fa-circle-check"></i></span> 150+ Tour Destinations</li>
+                    </ul>
+                    <p class="info">For information</p>
+                    <a href="tel:+919876543210" class="call-button phone"> 9876543210 </a>
+                </div>
+
+                    <div class="col-lg-6 image-sectio">
+                        <!-- <div class="shado "></div> -->
+                        <img src="nice-pic.jpeg" alt="Travel" class="img-fluid image">
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <!-- mobile veiw -----------------------------------------------------------------------------------  -->
+
+    <div class="container-fluid py-3" id="mobileveiw">
+        <div class="row align-items-center">
+            <div class="mobile">
+                <div class="col-lg-12 text-section">
+                    <h5 class="sub-title">THE BEST TRAVEL AGENCY</h5>
+                    <h2 class="title">DISCOVER THE <span>WORLD</span> WITH OUR GUIDE</h2>
+                    <p class="description">You can choose any country with good tourism. Agency elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat.</p>
+                    <p class="description">Hotel ut nisl quam vestibulum ac quam nec odio elementum ceisue the miss varius natoque penatibus et magnis dis parturient monte.</p>
+                    <ul class="features">
+                        <li><span><i class="fa-solid fa-circle-check"></i></span> 20 Years of Experience</li>
+                        <li><span><i class="fa-solid fa-circle-check"></i></span> 150+ Tour Destinations</li>
+                    </ul>
+                    <p class="info">For information</p>
+                    <a href="tel:+919876543210" class="call-button phone"> 9876543210 </a>
+                </div>
+                <div class="col-lg-12 image-section">
+                   
+                    <img src="nice-pic.jpeg" alt="Travel" class="img-fluid image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        const img = document.querySelector(".image");
+
+        img.addEventListener("mouseenter", () => {
+            img.style.transform = "scale(0.97)";
+        });
+
+        img.addEventListener("mouseleave", () => {
+            img.style.transform = "scale(1)";
+        });
+
+        document.querySelector('.call-button').addEventListener('click', function() {
+            window.location.href = "tel:+919876543210";
+        });
+    </script>
+</body>
+</html>
